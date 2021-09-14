@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Event</title>
+</head>
+<style>
+    body{
+        position: relative;
+    }
+
+    img{
+        position: absolute;
+    }
+</style>
+<body>
+    <img id="pokemon" style="top: 300px;left: 200px" src="images/Pikachu.jpg" width="100px" alt="pikachu">
+
+<script>
+    function randomPosition() {
+        //Math.random();
+        let top = parseInt(Math.random()*500); //Math.floor, Math.round, Math.ceil
+        let left = parseInt(Math.random()*500);
+        document.getElementById('pokemon').style.top = top + "px";
+        document.getElementById('pokemon').style.left = left + "px";
+    }
+    randomPosition();
+    // setInterval(randomPosition,1000);
+
+    let imgSrc = "https://static.wikia.nocookie.net/wii/images/8/89/Pikachu.jpg/revision/latest?cb=20140209205851";
+    //Trình duyệt lắng nghe 1 sự kiện
+    window.addEventListener('keydown', demoEvent);
+
+    function demoEvent(eventKey) { //eventKey là biến hứng sự kiện từ keydown
+        // console.log(eventKey)
+
+        let left = parseInt(document.getElementById('pokemon').style.left);
+        console.log(left);
+        if(eventKey.key == "d"){
+            left += 10;
+            document.getElementById('pokemon').style.left = left + "px";
+        }else if(eventKey.key == 'a'){
+            left -= 10;
+            document.getElementById('pokemon').style.left = left + "px";
+        }
+    }
+
+    document.getElementById('pokemon').addEventListener('click',changeImage);
+    function changeImage(){
+        console.log(document.getElementById('pokemon').src)
+        if(document.getElementById('pokemon').alt === 'pikachu'){
+            document.getElementById('pokemon').src = "images/meow.png";
+            document.getElementById('pokemon').alt = 'meow';
+        }else {
+            document.getElementById('pokemon').src = 'images/Pikachu.jpg'
+            document.getElementById('pokemon').alt = 'pikachu';
+
+        }
+    }
+</script>
+</body>
+</html>

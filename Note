@@ -1,0 +1,17 @@
+JavaScript có những loại sự kiện chính nào? (Event)
+Event Listener
+- Sự kiện bàn phím (Keyboard Event)
+    - Keydown
+    - Keyup
+    - Keypress
+- Sự kiện chuột (Mouse Event)
+
+Đường dẫn:
+    - Đường dẫn tương đối
+    - Đường dẫn tuyệt đối
+
+../../images/poke/Pikachu.jpg
+
+//Khi 5 hinh giong nhau thi hien thong bao
+B1: Hien thi 1 hinh len HTML
+B2: Click vao anh thi chuyen sang anh khac
